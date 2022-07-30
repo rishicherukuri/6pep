@@ -6,8 +6,8 @@ import java.util.*;
 public class student {
 	
 	public static String getid() {     //Gives us the d character length random id to the student 
-									   //in aaa000 first 3 will be the alphabets and the 
-		String id = "";				   //last 3 will be numbers
+					   //in aaa000 first 3 will be the alphabets and the 
+		String id = "";		  //last 3 will be numbers
 		
 		Random rand = new Random();
 		String alphabuffer = "abcdefghij";
@@ -29,9 +29,9 @@ public class student {
 		System.out.println("Student Management System");
 		
 		String url = "jdbc:mysql://localhost:3306/studentinfo";
-		String uname = "root";										//these are the parameters for the getConnection function
-		String pass = "Rishi";										//which will be get the connection from the database from 
-		String query; 												//local database having database "studentinfo"
+		String uname = "root";									//these are the parameters for the getConnection function
+		String pass = "Rishi";									//which will be get the connection from the database from 
+		String query; 										//local database having database "studentinfo"
 		
 		Class.forName("com.mysql.cj.jdbc.Driver");	//Loading the connector driver
 		Connection con = DriverManager.getConnection(url, uname, pass);	//getting the connection instance from the Connection interface
@@ -64,7 +64,7 @@ public class student {
 			}
 			break;
 			
-			case 2:					//update the existing students database
+			case 2:				//update the existing students database
 			{
 				System.out.print("Enter the Id of the student to update: ");
 				
@@ -85,14 +85,14 @@ public class student {
 			}
 			break;
 			
-			case 3:					//To view the data of the student 
+			case 3:			//To view the data of the student 
 			{	
 				System.out.println("1. Whole data  2. Single entry  3. With Constraints");
 				System.out.print("Enter your choice: ");
 				int view_choice = sc.nextInt();
 				
 				switch(view_choice) {
-				case 1:				//Gets the data of all students present in the DB 
+				case 1:			//Gets the data of all students present in the DB 
 				{
 					query = "select * from student";
 					ResultSet rs = st.executeQuery(query);
